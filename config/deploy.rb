@@ -1,6 +1,7 @@
 require 'torquebox-capistrano-support'
 require 'bundler/capistrano'
 
+default_run_options[:pty] = true
 set :application, "mhtest"
 set :scm, :git 
 set :repository,  "git://github.com/mhinton/mhtest.git"
