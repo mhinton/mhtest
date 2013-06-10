@@ -1,19 +1,25 @@
+require 'torquebox-capistrano-support'
+require 'bundler/capistrano'
+
 set :application, "mhtest"
-set :repository,  "set your repository location here"
+set :repository,  "/home/matthew/mhtest"
 
-# set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+set :scm, :git 
 
-role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-role :app, "your app-server here"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
+# Production server
+set :deploy_to,         "/srv/web/mhtest"
+# TODO: the following two settings need the correct values
+#set :torquebox_home,    "/opt/torquebox/current"
+#set :jboss_init_script, "/etc/init.d/jboss-as-standalone"
+set :rails_env,         "production"
+set :app_context,       "/mhtest"
+
+role :web, "localhost"                          # Your HTTP server, Apache/etc
+role :app, "localhost"                          # This may be the same as your `Web` server
+role :db,  "localhost", :primary => true # This is where Rails migrations will run
 
 # if you want to clean up old releases on each deploy uncomment this:
-# after "deploy:restart", "deploy:cleanup"
-
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
+after "deploy:restart", "deploy:cleanup"
 
 # If you are using Passenger mod_rails uncomment this:
 # namespace :deploy do

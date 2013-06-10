@@ -28,6 +28,7 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
 gem 'capistrano'
+gem 'torquebox-capistrano-support'
 
 # To use debugger
 gem 'ruby-debug', :require => 'ruby-debug'
