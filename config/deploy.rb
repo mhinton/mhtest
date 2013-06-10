@@ -2,21 +2,25 @@ require 'torquebox-capistrano-support'
 require 'bundler/capistrano'
 
 set :application, "mhtest"
-set :repository,  "/home/matthew/mhtest"
+set :repository,  "git://github.com/mhinton/mhtest.git"
 
 set :scm, :git 
 
 # Production server
 set :deploy_to,         "/srv/web/mhtest"
-# TODO: the following two settings need the correct values
-#set :torquebox_home,    "/opt/torquebox/current"
-#set :jboss_init_script, "/etc/init.d/jboss-as-standalone"
+
+set :jruby_home, "/usr/local/rvm/rubies/jruby-1.7.4"
+set :torquebox_home, "/usr/local/rvm/gems/jruby-1.7.4@global/gems/torquebox-server-2.3.0-java"
+set :jboss_home, "/usr/local/rvm/gems/jruby-1.7.4@global/gems/torquebox-server-2.3.0-java/jboss"
+# set :jboss_init_script, "/etc/init.d/jboss-as-standalone"
+set :jboss_control_style, :binscripts
+set :jboss_bind_address, "0.0.0.0:6666"
 set :rails_env,         "production"
 set :app_context,       "/mhtest"
 
-role :web, "localhost"                          # Your HTTP server, Apache/etc
-role :app, "localhost"                          # This may be the same as your `Web` server
-role :db,  "localhost", :primary => true # This is where Rails migrations will run
+role :web, "shire.commongroundpublishing.com"                          # Your HTTP server, Apache/etc
+role :app, "shire.commongroundpublishing.com"                          # This may be the same as your `Web` server
+role :db,  "shire.commongroundpublishing.com", :primary => true # This is where Rails migrations will run
 
 # if you want to clean up old releases on each deploy uncomment this:
 after "deploy:restart", "deploy:cleanup"
