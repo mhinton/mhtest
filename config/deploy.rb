@@ -6,7 +6,7 @@ set :application, "mhtest"
 set :scm, :git 
 set :repository,  "git://github.com/mhinton/mhtest.git"
 set :user, "matthew"
-set :use_sudo, true
+set :use_sudo, false
 
 # Production server
 set :deploy_to,         "/srv/www/mhtest"

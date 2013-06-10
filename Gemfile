@@ -1,11 +1,10 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'rails', '3.1.12'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-#gem 'activerecord-jdbcpostgresql-adapter'
 gem 'activerecord-jdbcsqlite3-adapter'
 gem 'jruby-openssl'
 
@@ -31,4 +30,4 @@ gem 'capistrano'
 gem 'torquebox-capistrano-support'
 
 # To use debugger
-gem 'ruby-debug', :require => 'ruby-debug'
+# gem 'ruby-debug', :require => 'ruby-debug'
