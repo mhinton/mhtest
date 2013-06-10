@@ -9,7 +9,7 @@ set :user, "matthew"
 set :use_sudo, true
 
 # Production server
-set :deploy_to,         "/srv/web/mhtest"
+set :deploy_to,         "/srv/www/mhtest"
 
 set :jruby_home, "/usr/local/rvm/rubies/jruby-1.7.4"
 set :torquebox_home, "/usr/local/rvm/gems/jruby-1.7.4@global/gems/torquebox-server-2.3.0-java"
