@@ -4,6 +4,7 @@ require 'bundler/capistrano'
 set :application, "mhtest"
 set :scm, :git 
 set :repository,  "git://github.com/mhinton/mhtest.git"
+set :user, "matthew"
 set :use_sudo, true
 
 # Production server
