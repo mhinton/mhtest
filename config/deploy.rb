@@ -2,9 +2,9 @@ require 'torquebox-capistrano-support'
 require 'bundler/capistrano'
 
 set :application, "mhtest"
-set :repository,  "git://github.com/mhinton/mhtest.git"
-
 set :scm, :git 
+set :repository,  "git://github.com/mhinton/mhtest.git"
+set :use_sudo, true
 
 # Production server
 set :deploy_to,         "/srv/web/mhtest"
