@@ -27,6 +27,7 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
 gem 'capistrano'
+gem 'rvm-capistrano'
 gem 'torquebox-capistrano-support'
 
 # To use debugger

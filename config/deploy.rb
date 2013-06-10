@@ -1,5 +1,14 @@
 require 'torquebox-capistrano-support'
 require 'bundler/capistrano'
+require 'rvm/capistrano'
+
+set :default_environment, {
+  'PATH' => "/usr/local/rvm/gems/jruby-1.7.4@global/bin:/usr/local/rvm/rubies/jruby-1.7.4/bin:/usr/local/rvm/bin:/usr/local/bin:/usr/bin:/bin",
+  'RUBY_VERSION' => 'jruby-1.7.4',
+  'GEM_HOME'     => '/usr/local/rvm/gems/jruby-1.7.4@global',
+  'GEM_PATH'     => '/usr/local/rvm/gems/jruby-1.7.4@global',
+  'BUNDLE_PATH'  => '/srv/www/mhtest/shared/bundle'  # If you are using bundler.
+}
 
 default_run_options[:pty] = true
 set :application, "mhtest"
