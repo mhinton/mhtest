@@ -24,8 +24,8 @@ set :deploy_to,         "/srv/www/mhtest"
 set :jruby_home, "/usr/local/rvm/rubies/jruby-1.7.4"
 set :torquebox_home, "/usr/local/rvm/gems/jruby-1.7.4@global/gems/torquebox-server-2.3.0-java"
 set :jboss_home, "/usr/local/rvm/gems/jruby-1.7.4@global/gems/torquebox-server-2.3.0-java/jboss"
-# set :jboss_init_script, "/etc/init.d/jboss-as-standalone"
-set :jboss_control_style, :binscripts
+set :jboss_init_script, "/etc/init.d/torquebox"
+# set :jboss_control_style, :binscripts
 set :jboss_bind_address, "0.0.0.0:6666"
 set :rails_env,         "production"
 set :app_context,       "/mhtest"
