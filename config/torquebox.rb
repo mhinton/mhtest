@@ -2,6 +2,7 @@ TorqueBox.configure do
  environment do
     GEM_HOME "#{ENV['rvm_path']}/gems/jruby-1.7.4@mhtest"
     GEM_PATH "#{ENV['rvm_path']}/gems/jruby-1.7.4@mhtest:#{ENV['rvm_path']}/gems/jruby-1.7.4@global"
+    TMPDIR '/tmp'
   end
 
   web do
